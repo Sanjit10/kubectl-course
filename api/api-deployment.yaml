@@ -29,6 +29,11 @@ spec:
               configMapKeyRef:
                 name: synergychat-api-configmap
                 key: API_DB_FILEPATH
+          - name: CRAWLER_BASE_URL
+            valueFrom:
+              configMapKeyRef:
+                key: CRAWLER_BASE_URL
+                name: synergychat-api-configmap
         resources:
           limits:
             cpu: "500m"

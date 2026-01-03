@@ -5,7 +5,6 @@ metadata:
     app: synergychat-web
   name: synergychat-web
 spec:
-  replicas: 3
   selector:
     matchLabels:
       app: synergychat-web
@@ -22,11 +21,11 @@ spec:
         imagePullPolicy: Always
         resources:
           requests:
-            cpu: 100m
-            memory: 128Mi
+            cpu: 10m
+            memory: 16Mi
           limits:
-            cpu: 500m
-            memory: 512Mi
+            cpu: 10m
+            memory: 16Mi
         env:
           - name: API_URL
             valueFrom:
