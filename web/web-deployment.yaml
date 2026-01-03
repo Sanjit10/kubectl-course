@@ -14,10 +14,19 @@ spec:
       labels:
         app: synergychat-web
     spec:
+      serviceAccountName: default
+      automountServiceAccountToken: false
       containers:
       - name: synergychat-web
         image: docker.io/bootdotdev/synergychat-web:latest
         imagePullPolicy: Always
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+          limits:
+            cpu: 500m
+            memory: 512Mi
         env:
           - name: API_URL
             valueFrom:

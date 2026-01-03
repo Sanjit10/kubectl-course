@@ -15,6 +15,8 @@ spec:
       labels:
         app: synergychat-crawler
     spec:
+      serviceAccountName: synergychat-crawler
+      automountServiceAccountToken: false
       containers:
       - name: synergychat-crawler-1
         image: bootdotdev/synergychat-crawler:latest
@@ -34,6 +36,13 @@ spec:
             configMapKeyRef:
               name: synergychat-crawler-configmap
               key: CRAWLER_DB_PATH
+        resources:
+          requests:
+            cpu: 250m
+            memory: 256Mi
+          limits:
+            cpu: 500m
+            memory: 512Mi
         volumeMounts:
         - name: cache-volume
           mountPath: /cache
@@ -55,6 +64,13 @@ spec:
             configMapKeyRef:
               name: synergychat-crawler-configmap
               key: CRAWLER_DB_PATH
+        resources:
+          requests:
+            cpu: 250m
+            memory: 256Mi
+          limits:
+            cpu: 500m
+            memory: 512Mi
         volumeMounts:
         - name: cache-volume
           mountPath: /cache
@@ -76,6 +92,13 @@ spec:
             configMapKeyRef:
               name: synergychat-crawler-configmap
               key: CRAWLER_DB_PATH
+        resources:
+          requests:
+            cpu: 250m
+            memory: 256Mi
+          limits:
+            cpu: 500m
+            memory: 512Mi
         volumeMounts:
         - name: cache-volume
           mountPath: /cache

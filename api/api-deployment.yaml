@@ -14,6 +14,7 @@ spec:
       labels:
         app: synergychat-api
     spec:
+      automountServiceAccountToken: false
       containers:
       - name: synergychat-api
         image: bootdotdev/synergychat-api:latest
@@ -28,6 +29,15 @@ spec:
               configMapKeyRef:
                 name: synergychat-api-configmap
                 key: API_DB_FILEPATH
+        resources:
+          limits:
+            cpu: "500m"
+            memory: "256Mi"
+            ephemeral-storage: "1Gi"
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+            ephemeral-storage: "512Mi"
         volumeMounts:
         - name: synergychat-api-volume
           mountPath: /persist
