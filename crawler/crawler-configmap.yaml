@@ -7,7 +7,7 @@ data:
   CRAWLER_PORT1: "8080"
   CRAWLER_PORT2: "8081"
   CRAWLER_PORT3: "8082"
-  CRAWLER_KEYWORDS: 
+  CRAWLER_KEYWORDS: |
     -love
     -hate
     -joy
@@ -15,6 +15,6 @@ data:
     -anger
     -disgust
     -fear
-    -suprise
+    -surprise
   CRAWLER_DB_PATH: "/cache/db"
     

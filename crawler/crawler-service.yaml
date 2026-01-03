@@ -6,9 +6,7 @@ metadata:
 spec:
   selector:
     app: synergychat-crawler
-
   ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 3000
-
+  - port: 80
+    protocol: TCP
+    targetPort: 3000
